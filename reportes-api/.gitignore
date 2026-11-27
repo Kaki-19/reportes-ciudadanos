@@ -1,0 +1,13 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+*.log
+appsettings.Development.json
+appsettings.*.local.json
+# Imágenes subidas por usuarios (se conserva la carpeta)
+ReportesApi/wwwroot/uploads/*
+!ReportesApi/wwwroot/uploads/.gitkeep

@@ -1,0 +1,37 @@
+### Pruebas rápidas (Visual Studio / extensión REST Client de VS Code)
+@base = http://localhost:5000
+@token = pega_aqui_el_token
+
+### Registro
+POST {{base}}/api/auth/register
+Content-Type: application/json
+
+{ "nombre": "Ciudadano Prueba", "correo": "ciudadano@test.com", "password": "Prueba123" }
+
+### Login
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "correo": "ciudadano@test.com", "password": "Prueba123" }
+
+### Usuario actual
+GET {{base}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### Categorías activas
+GET {{base}}/api/categorias
+Authorization: Bearer {{token}}
+
+### Crear categoría (solo Administrador)
+POST {{base}}/api/categorias
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "nombre": "Semáforos", "descripcion": "Semáforos apagados o descompuestos" }
+
+### Desactivar categoría (solo Administrador)
+PUT {{base}}/api/categorias/5
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "nombre": "Semáforos", "descripcion": "Semáforos apagados o descompuestos", "activa": false }
