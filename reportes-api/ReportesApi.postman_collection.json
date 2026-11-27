@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "efd7e2e9-5e85-439f-8fca-84a5f208c369",
+    "name": "Reportes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52685550",
+    "_collection_link": "https://go.postman.co/collection/52685550-efd7e2e9-5e85-439f-8fca-84a5f208c369?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Parques",
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "followRedirects": true,
+        "protocolVersion": "auto",
+        "strictSSL": false
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_06yy}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"nombre\": \"Parques\", \"descripcion\": \"Áreas verdes dañadas\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/categorias",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "categorias"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "maria@test.com",
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "followRedirects": true,
+        "protocolVersion": "auto",
+        "strictSSL": false
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"nombre\": \"María López\", \"correo\": \"maria@test.com\", \"password\": \"Prueba123\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Banquetas",
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "followRedirects": true,
+        "protocolVersion": "auto",
+        "strictSSL": false
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0gyt}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"nombre\": \"Banquetas\", \"descripcion\": \"Banquetas rotas o en mal estado\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/categorias",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "categorias"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "admin@reportes.local",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});"
+            ]
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "followRedirects": true,
+        "protocolVersion": "auto",
+        "strictSSL": false
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0518}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"correo\": \"admin@reportes.local\", \"password\": \"Admin12345\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0gyt",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_06yy",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0518",
+      "secret": true
+    }
+  ]
+}
